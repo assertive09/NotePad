@@ -13,7 +13,7 @@
 <%@include file="all_js_css.jsp"%>
 </head>
 <body>
-	<div class="container">
+	<div class="container-fluid p-2 m-0">
 		<%@include file="navbar.jsp"%>
 		<br>
 		<h1 class="text-uppercase">All Notes</h1>
@@ -28,11 +28,15 @@
 				for (Note n : notes) {
 				%>
 				<div class="card mt-3">
-					<img class="card-img-top m-4 " style="max-width:100px" src="img/notes.png" alt="Card image cap">
-					<div class="card-body">
+					<img class="card-img-top m-4 mx-auto " style="max-width:100px" src="img/notes.png" alt="Card image cap">
+					<div class="card-body px-5">
 						<h5 class="card-title"><%= n.getTitle() %></h5>
 						<p class="card-text"><%= n.getContent() %> </p>
-						<a href="#" class="btn btn-danger">Delete</a>
+						<p class="text-primary"><b><%= n.getAddedDate() %></b></p>
+						<div class="container text-center mt-2">
+						<a href="DeleteServlet?note_id=<%= n.getId() %>" class="btn btn-danger">Delete</a>
+						<a href="edit.jsp?note_id=<%= n.getId() %>" class="btn btn-primary">Update</a>
+						</div>
 					</div>
 				</div>
 

@@ -31,7 +31,6 @@ public class SaveNoteServlet extends HttpServlet {
 			Note note=new Note(title,content,new Date());
 			
 			//hibernate save()
-			
 			Session session=FactoryProvider.getFactory().openSession();
 			Transaction tx=session.beginTransaction();
 			session.save(note);
