@@ -9,5 +9,5 @@ Java Servlet, Hibernate Framework (MySQL)
 Ide -
 Eclipse
 
-Seever -
+Server -
 Apache Tomcat -9
